@@ -124,13 +124,7 @@ setup(
     cmdclass={
         'publish': PublishCommand,
     },
-    dependency_links=[],
     description=description,
-    entry_points={
-        'console_scripts': [
-            'hero=hero.cli:main_cli',
-        ],
-    },
     install_requires=requirements,
     license="Apache-2.0 OR MIT",
     long_description=readme,

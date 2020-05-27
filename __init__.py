@@ -1,7 +1,12 @@
 import asyncio
 
-from hero import ExtensionConfig
+from hero import ExtensionConfig, version
 from hero.utils import AsyncUsingDB, SyncToAsync, SyncToAsyncThreadSafe
+
+
+__version__ = 'v0.1.0-beta'
+
+VERSION = version(__version__)
 
 
 class SchedulerConfig(ExtensionConfig):

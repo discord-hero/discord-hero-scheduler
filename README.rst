@@ -1,6 +1,9 @@
 Discord Hero Scheduler Extension
 ================================
 
+A Scheduler extension for Discord Hero, allowing you to schedule the execution of Controller methods.
+It also comes with a shutdown command that shuts down discord-hero gracefully.
+
 Legal stuff
 -----------
 

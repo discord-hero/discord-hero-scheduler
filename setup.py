@@ -19,8 +19,19 @@ _, EXTENSION_NAME = os.path.split(here)
 with codecs.open(os.path.join(here, 'README.rst'), encoding='utf-8') as readme_file:
     readme = readme_file.read()
 
-_, _, description = readme.partition('\n\n')
-description, _, _ = description.partition('\n\n')
+
+readme_lines = readme.splitlines()
+if len(readme_lines) < 4:
+    description = readme_lines[0]
+else:
+    description = ''
+    readme_lines = readme_lines[3:]
+    for line in readme_lines:
+        if line:
+            description += ' ' + line if description else line
+        else:
+            break
+
 
 python_requirement = '>= 3.7.0'
 
@@ -28,7 +39,7 @@ requirements = [
     "discord-hero>=0.1.0b0",
 ]
 
-with codecs.open(os.path.join(here, 'hero', '__init__.py'), encoding='utf-8') as f:
+with codecs.open(os.path.join(here, '__init__.py'), encoding='utf-8') as f:
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
                         f.read(), re.MULTILINE).group(1)
 
@@ -130,7 +141,7 @@ setup(
     packages=packages,
     package_dir=package_dir,
     python_requires=python_requirement,
-    url='https://github.com/discord-hero/discord-hero',
+    url='https://github.com/discord-hero/discord-hero-scheduler',
     version=version,
     zip_safe=False,
 )

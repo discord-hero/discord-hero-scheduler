@@ -4,7 +4,7 @@ from hero import ExtensionConfig, version
 from hero.utils import AsyncUsingDB, SyncToAsync, SyncToAsyncThreadSafe
 
 
-__version__ = 'v0.1.0-beta'
+__version__ = '0.1.0-beta.1'
 
 VERSION = version(__version__)
 

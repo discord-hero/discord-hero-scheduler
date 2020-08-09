@@ -34,6 +34,7 @@ PYTHON_REQUIREMENT = '>= 3.7.0'
 
 REQUIREMENTS = [
     "discord-hero>=0.1.0b0",
+    "sortedcontainers"
 ]
 
 
